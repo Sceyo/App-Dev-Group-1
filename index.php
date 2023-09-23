@@ -14,7 +14,7 @@ include("insert_listing.php");
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="\proj\styles.css">
+    <link rel="stylesheet" href=".\css\styles.css">
 </head>
 
 <body>
@@ -22,7 +22,7 @@ include("insert_listing.php");
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="/proj/logo.png" alt="Logo" width="60" height="54" class="d-inline-block align-text-middle">
+                <img src="./assets/logo.png" alt="Logo" width="60" height="54" class="d-inline-block align-text-middle">
                 Interasian Realty Services Inc.
             </a>
             <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
@@ -58,7 +58,7 @@ include("insert_listing.php");
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="\proj\banner2.jpg" class="d-block w-100" alt="...">
+                <img src=".\assets\banner2.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption">
                     <h5>Your Dream House</h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, nulla, tempore. Deserunt
@@ -67,7 +67,7 @@ include("insert_listing.php");
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="\proj\banner2.jpg" class="d-block w-100" alt="...">
+                <img src=".\assets\banner2.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption">
                     <h5>Always Dedicated</h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, nulla, tempore. Deserunt
@@ -76,7 +76,7 @@ include("insert_listing.php");
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="\proj\banner2.jpg" class="d-block w-100" alt="...">
+                <img src=".\assets\banner2.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption">
                     <h5>True Construction</h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, nulla, tempore. Deserunt
@@ -102,7 +102,7 @@ include("insert_listing.php");
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-12 col-12">
-                    <div class="about-img"><img alt="" class="img-fluid" src="\proj\logo.png"></div>
+                    <div class="about-img"><img alt="" class="img-fluid" src=".\assets\logo.png"></div>
                 </div>
                 <div class="col-lg-8 col-md-12 col-12 ps-lg-5 mt-md-5">
                     <div class="about-text" style="text-align:justify;">
@@ -403,7 +403,7 @@ include("insert_listing.php");
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
     </script>
-    <script src="\proj\script.js"></script>
+    <script src=".\js\script.js"></script>
 </body>
 
 </html>
