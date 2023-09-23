@@ -42,6 +42,9 @@ include("insert_listing.php");
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact Us</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.php">Login</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -108,126 +111,16 @@ include("insert_listing.php");
                     <div class="about-text" style="text-align:justify;">
                         <h2>We Provide the Best Quality<br>
                             Services Ever</h2>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, labore reiciendis.
-                            Assumenda eos quod animi! Soluta nesciunt inventore dolores excepturi provident,
-                            culpa
-                            beatae tempora, explicabo corporis quibusdam corrupti. Autem, quaerat. Assumenda quo
-                            aliquam vel, nostrum explicabo ipsum dolor, ipsa perferendis porro doloribus
-                            obcaecati
-                            placeat natus iste odio est non earum?</p><a class="btn btn-warning" href="#">Learn
+                        <p>InterAsian Realty Services Incorporated is a Cebu-based group of licensed real estate brokers
+                            and sales agents established in October of 2015. They provide a full array of real estate
+                            and brokerage solutions including site selection, land acquisition, and selling of
+                            investment property. The company is in need of a platform that they can post and display
+                            their listings so that customers and interested clients will be able to conveniently browse
+                            through their properties. The real estate brokers have specified that they want to be able
+                            to post, edit, and delete listings as they please and that a contact form should be
+                            available if customers were interested in inquiring about a particular property.</p><a
+                            class="btn btn-warning" href="#">Learn
                             More</a>
-                        <!-------------- Button trigger modal ------------>
-                        <button type="button" class="btn btn-warning ms-3" onclick="showPasswordPrompt()">
-                            Post Listing
-                        </button>
-
-                        <!--------- Password for Modal Prompt ------------->
-                        <div id="passwordPrompt" class="password-prompt">
-                            <button type="button" class="close-btn position-absolute top-0 end-65"
-                                onclick="closePasswordPrompt()">&times;</button><br><br>
-                            <h1 class="modal-title fs-9"><b><u>FOR ADMIN USE ONLY.</u></b><br><br></h1>
-                            <h1 class="fs-7">Enter the password:</h1>
-                            <input type="password" id="passwordInput" class="form-control">
-                            <center><button type="button" class="btn btn-warning mt-3"
-                                    onclick="checkPassword()">Submit</button></center>
-                        </div>
-
-                        <!---------------- Modal for Listing Insert---------------------- -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">POST A LISTING</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-
-                                    <div class="modal-body">
-                                        <form id="listingForm" action="insert_listing.php" method="post"
-                                            enctype="multipart/form-data">
-                                            <!----------------------POST LISTING MODAL FORM--------------------->
-                                            <div class="input-group mb-3">
-                                                <span class="input-group-text" id="basic-addon1">Title</span>
-                                                <input type="text" class="form-control" id="title" name="title"
-                                                    aria-label="Title" aria-describedby="basic-addon1" required>
-                                            </div>
-
-                                            <div class="input-group mb-3">
-                                                <span class="input-group-text" id="basic-addon1">Location</span>
-                                                <input type="text" class="form-control" id="location" name="location"
-                                                    aria-label="Location" aria-describedby="basic-addon1" required>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col">
-                                                    <div class="input-group mb-1">
-                                                        <span class="input-group-text" id="basic-addon1">Land
-                                                            Area</span>
-                                                        <input type="text" class="form-control" aria-label="landarea"
-                                                            id="landarea" name="landarea"
-                                                            aria-describedby="basic-addon1" required>
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="input-group mb-3">
-                                                        <span class="input-group-text" id="basic-addon1">Floor
-                                                            Area</span>
-                                                        <input type="text" class="form-control" aria-label="floorarea"
-                                                            id="floorarea" name="floorarea"
-                                                            aria-describedby="basic-addon1" required>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col">
-                                                    <div class="input-group mb-1">
-                                                        <span class="input-group-text" id="basic-addon1"># of
-                                                            Bedrooms</span>
-                                                        <input type="text" class="form-control" aria-label="bedrooms"
-                                                            id="bedrooms" name="bedrooms"
-                                                            aria-describedby="basic-addon1" required>
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="input-group mb-3">
-                                                        <span class="input-group-text" id="basic-addon1"># of
-                                                            Bathrooms</span>
-                                                        <input type="text" class="form-control" aria-label="bathrooms"
-                                                            id="bathrooms" name="bathrooms"
-                                                            aria-describedby="basic-addon1" required>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="input-group mb-3">
-                                                <span class="input-group-text">Price</span>
-                                                <input type="text" class="form-control" id="price" name="price"
-                                                    aria-label="Amount (to the nearest peso)" required>
-                                                <span class="input-group-text">.00</span>
-                                            </div>
-
-                                            <div class="input-group mb-3">
-                                                <span class="input-group-text">Description</span>
-                                                <textarea class="form-control" aria-label="With textarea"
-                                                    id="description" name="description" required></textarea>
-                                            </div>
-                                            <div class="input-group mb-3">
-                                                <label class="input-group-text" for="inputGroupFile01">Upload</label>
-                                                <input type="file" name="image[]" class="form-control"
-                                                    id="inputGroupFile01" multiple>
-                                            </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Close</button>
-                                        <button type="submit" name="submit" class="btn btn-warning">Save
-                                            changes</button>
-                                    </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

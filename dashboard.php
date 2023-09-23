@@ -65,19 +65,9 @@ if ($result) {
                 </div>
                 <div class="col-auto">
                     <!-------------- Button for create listing modal ------------>
-                    <button type="button" class="btn btn-warning" onclick="showPasswordPrompt()">
+                    <button type="button" class="btn btn-warning" onclick="openModal('exampleModal')">
                         Post Listing
                     </button>
-                </div>
-                <!--------- Password for Modal Prompt ------------->
-                <div id="passwordPrompt" class="password-prompt">
-                    <button type="button" class="close-btn position-absolute top-0 end-65"
-                        onclick="closePasswordPrompt()">&times;</button><br><br>
-                    <h1 class="modal-title fs-9"><b><u>FOR ADMIN USE ONLY.</u></b><br><br></h1>
-                    <h1 class="fs-7">Enter the password:</h1>
-                    <input type="password" id="passwordInput" class="form-control">
-                    <center><button type="button" class="btn btn-warning mt-3" onclick="checkPassword()">Submit</button>
-                    </center>
                 </div>
 
                 <!---------------- Modal for Listing Insert---------------------- -->
@@ -190,6 +180,15 @@ if ($result) {
                         </p>
                     </div>
                 </div>
+            </div>
+            <div class="row ms-1 mt-5">
+                All Listings
+            </div>
+            <div class="row mt-3">
+                <form class="d-flex" style="width: 60%;">
+                    <input class="form-control me-2" type="search" placeholder="Search Listing" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
             </div>
         </div>
     </section>
