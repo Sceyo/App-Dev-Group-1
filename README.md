@@ -15,6 +15,11 @@ InterAsian Realty Services Incorporated is a Cebu-based group of licensed real e
 
 ### 1st Sprint
 
+Google Drive link: https://drive.google.com/drive/folders/18e-dqIRJwfn5bP6hoE6JKyfwwqq4t1Mv?usp=sharing
+Deadline For 1st Sprint: 30-09-2023
+Mockup Link: https://www.figma.com/file/X8HEAjIW5D5yRbW91tCOiB/InterAsian-Web-Design?type=design&node-id=8803-880&mode=design&t=nsr8025nko7WL03x-0
+
+
 
 ### 2nd Sprint
 
