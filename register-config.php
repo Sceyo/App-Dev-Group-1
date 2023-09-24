@@ -1,9 +1,10 @@
 <?php
 session_start();
 
-include("database.php");
+include("database.php");   //db
 
-$registrationMessage = "";
+$registrationMessage = "";  //for the successful reg line
+$errorMessage = "";   //for validation erroR msgs
 
 if (isset($_POST['register'])) {
     $firstname = $_POST['firstname'];
@@ -16,30 +17,36 @@ if (isset($_POST['register'])) {
     if (empty($firstname) || empty($lastname) || empty($email) || empty($password) || empty($confirm_password)) {
         $registrationMessage = "All fields are required.";
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $registrationMessage = "Invalid email format.";
+        $errorMessage = "Invalid email format.";
     } elseif (strlen($password) < 6) {
-        $registrationMessage = "Password must be at least 6 characters long.";
+        $errorMessage = "Password must be at least 6 characters long.";
     } elseif ($password !== $confirm_password) {
-        $registrationMessage = "Passwords do not match.";
+        $errorMessage = "Passwords do not match.";
     } else {
         $email_check_sql = "SELECT * FROM users WHERE email = '$email'";
         $email_check_result = $conn->query($email_check_sql);
 
         if ($email_check_result->num_rows > 0) {
-            $registrationMessage = "Email already exists. Please use a different email.";
+            $errorMessage = "Email already exists. Please use a different email.";
         } else {
-            $hashed_password = password_hash($password, PASSWORD_DEFAULT);   //hash
+            $hashed_password = password_hash($password, PASSWORD_DEFAULT);   //hash pass
 
             $sql = "INSERT INTO users (firstname, lastname, email, password) VALUES ('$firstname', '$lastname', '$email', '$hashed_password')";
 
             if ($conn->query($sql) === TRUE) {
                 $_SESSION['registration_success'] = true;
             } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
+                $errorMessage = "Error: " . $sql . "<br>" . $conn->error;
             }
         }
     }
 }
+
+   // Store the error message in the session if there's an error
+   if (!empty($errorMessage)) {
+    $_SESSION['registration_error'] = $errorMessage;
+}
+
 header("Location: signin.php");
 exit(); 
 ?>

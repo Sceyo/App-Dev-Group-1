@@ -1,9 +1,15 @@
 <?php
 session_start(); 
 
-if (isset($_SESSION['registration_success']) && $_SESSION['registration_success']) {
+//session if reg success
+if(isset($_SESSION['registration_success']) && $_SESSION['registration_success']){
     $registrationMessage = "Account created! Proceed to Sign In";
     unset($_SESSION['registration_success']);  
+}
+//session if reg error
+if (isset($_SESSION['registration_error'])) {
+    $errorMessage = $_SESSION['registration_error'];
+    unset($_SESSION['registration_error']); 
 }
 ?>
 
@@ -20,6 +26,10 @@ if (isset($_SESSION['registration_success']) && $_SESSION['registration_success'
     <style>
     .registration-message {
         color: black;
+    }
+
+    .error-message {
+        color: red;
     }
     </style>
 </head>
@@ -40,6 +50,7 @@ if (isset($_SESSION['registration_success']) && $_SESSION['registration_success'
                         <button class="tablinks" onclick="openCity(event, 'sign-in')">Sign In</button>
                     </div>
                 </div>
+                <!-----SIGN UP------>
                 <form class="form-detail" action="register-config.php" method="post">
                     <div class="tabcontent" id="sign-up">
                         <div class="form-row">
@@ -79,12 +90,15 @@ if (isset($_SESSION['registration_success']) && $_SESSION['registration_success'
                             </label>
                         </div>
                         <?php if (!empty($registrationMessage)) { ?>
-                        <div class="registration-message"><?php echo $registrationMessage; ?></div>
-                        <?php } ?>
-                        <div class="form-row-last">
-                            <input type="submit" name="register" class="register" value="Register">
-                        </div>
-                    </div>
+                        <div class="registration-message"><?php echo $registrationMessage; ?>
+                            <?php } ?>
+                            <?php if (!empty($errorMessage)) { ?>
+                            <div class="error-message"><?php echo $errorMessage; ?>
+                                <?php } ?>
+                                <div class="form-row-last">
+                                    <input type="submit" name="register" class="register" value="Register">
+                                </div>
+                            </div>
                 </form>
 
                 <!----Sign in------->
