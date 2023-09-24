@@ -12,6 +12,7 @@ if (isset($_POST['register'])) {
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
 
+    //Registration validation
     if (empty($firstname) || empty($lastname) || empty($email) || empty($password) || empty($confirm_password)) {
         $registrationMessage = "All fields are required.";
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
