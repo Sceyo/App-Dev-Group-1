@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("insert_listing.php");
 ?>
 
@@ -43,7 +44,15 @@ include("insert_listing.php");
                         <a class="nav-link" href="#contact">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="login.php">Login</a>
+                        <?php
+    if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) {
+        // If the user is logged in, show the "Logout" link
+        echo '<a class="nav-link" href="logout.php">Logout</a>';
+    } else {
+        // If the user is not logged in, show the "Login" link
+        echo '<a class="nav-link" href="signin.php">Login</a>';
+    }
+    ?>
                     </li>
                 </ul>
             </div>
