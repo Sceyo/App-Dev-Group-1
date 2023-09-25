@@ -45,12 +45,12 @@ include("insert_listing.php");
                     </li>
                     <li class="nav-item">
                         <?php
-    if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) {
-        echo '<a class="nav-link" href="logout.php">Logout</a>';
-    } else {
-        echo '<a class="nav-link" href="signin.php">Login</a>';
-    }
-    ?>
+                        if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) {
+                            echo '<a class="nav-link" href="logout.php">Logout</a>';
+                            } else {
+                                echo '<a class="nav-link" href="signin.php">Login</a>';
+                            }
+                            ?>
                     </li>
                 </ul>
             </div>

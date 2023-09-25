@@ -1,6 +1,9 @@
 <?php
+session_start();
 include("database.php");
+include("insert_listing.php");
 
+//for displaying num of listings sa table
 $query = "SELECT COUNT(*) AS total_listings FROM listings";
 $result = mysqli_query($conn, $query);
 
@@ -31,7 +34,7 @@ if ($result) {
     <!--------------------------NAVBAR------------------------>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.php">
                 <img src="./assets/logo.png" alt="Logo" width="60" height="54" class="d-inline-block align-text-middle">
                 Interasian Realty Services Inc.
             </a>
@@ -41,16 +44,19 @@ if ($result) {
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
+                        <a class="nav-link" href="index.php#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#services">Listings</a>
+                        <a class="nav-link" href="index.php#services">Listings</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact Us</a>
+                        <a class="nav-link" href="index.php#contact">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="signin.php">Login</a>
                     </li>
                 </ul>
             </div>
