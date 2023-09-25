@@ -17,10 +17,14 @@ if (isset($_POST['login'])) {
             header("Location: index.php");
             exit(); 
         } else {
-            echo "Incorrect password!";
+            $_SESSION['login_error'] = "Incorrect password!";     //to display errorMsg in the signin page
+            header("Location: signin.php");
+            exit();
         }
     } else {
-        echo "User not found!";
+        $_SESSION['login_error'] = "User not found!";   // " " 
+        header("Location: signin.php");
+        exit();
     }
 }
 ?>

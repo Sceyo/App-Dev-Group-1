@@ -119,6 +119,12 @@ if (isset($_SESSION['registration_error'])) {
                                 <span class="border"></span>
                             </label>
                         </div>
+                        <?php
+                            if (isset($_SESSION['login_error'])) {
+                                echo '<div class="error-message">' . $_SESSION['login_error'] . '</div>';
+                                unset($_SESSION['login_error']); 
+                                }
+                        ?>
                         <div class="form-row-last">
                             <input type="submit" name="login" class="register" value="Sign In">
                         </div>
