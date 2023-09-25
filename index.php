@@ -46,10 +46,8 @@ include("insert_listing.php");
                     <li class="nav-item">
                         <?php
     if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) {
-        // If the user is logged in, show the "Logout" link
         echo '<a class="nav-link" href="logout.php">Logout</a>';
     } else {
-        // If the user is not logged in, show the "Login" link
         echo '<a class="nav-link" href="signin.php">Login</a>';
     }
     ?>
@@ -70,7 +68,7 @@ include("insert_listing.php");
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src=".\assets\banner2.jpg" class="d-block w-100" alt="...">
+                <img src=".\assets\carouselIMG1.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption">
                     <h5>Your Dream House</h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, nulla, tempore. Deserunt
@@ -79,7 +77,7 @@ include("insert_listing.php");
                 </div>
             </div>
             <div class="carousel-item">
-                <img src=".\assets\banner2.jpg" class="d-block w-100" alt="...">
+                <img src=".\assets\carouselIMG2.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption">
                     <h5>Always Dedicated</h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, nulla, tempore. Deserunt
@@ -88,7 +86,7 @@ include("insert_listing.php");
                 </div>
             </div>
             <div class="carousel-item">
-                <img src=".\assets\banner2.jpg" class="d-block w-100" alt="...">
+                <img src=".\assets\carouselIMG3.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption">
                     <h5>True Construction</h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, nulla, tempore. Deserunt
