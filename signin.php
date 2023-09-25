@@ -11,6 +11,7 @@ if (isset($_SESSION['registration_error'])) {
     $errorMessage = $_SESSION['registration_error'];
     unset($_SESSION['registration_error']); 
 }
+
 ?>
 
 
@@ -26,10 +27,16 @@ if (isset($_SESSION['registration_error'])) {
     <style>
     .registration-message {
         color: black;
+        text-align: center;
     }
 
-    .error-message {
-        color: red;
+    .reg-error-message {
+        color: #E34234;
+        margin-left: 40px;
+    }
+
+    .log-error-message {
+        color: #E34234;
     }
     </style>
 </head>
@@ -44,13 +51,14 @@ if (isset($_SESSION['registration_error'])) {
             <div class="form-right" style="margin-left: 2em;">
                 <div class="tab">
                     <div class="tab-inner">
-                        <button class="tablinks" onclick="openCity(event, 'sign-up')" id="defaultOpen">Sign Up</button>
+                        <button class="tablinks" onclick="openCity(event, 'sign-up')" id="defaultOpen">Sign
+                            Up</button>
                     </div>
                     <div class="tab-inner">
-                        <button class="tablinks" onclick="openCity(event, 'sign-in')">Sign In</button>
+                        <button class="tablinks" onclick="openCity(event, 'sign-in')" id="login-tab">Sign In</button>
                     </div>
                 </div>
-                <!-----SIGN UP------>
+                <!-----REGISTER------>
                 <form class="form-detail" action="register-config.php" method="post">
                     <div class="tabcontent" id="sign-up">
                         <div class="form-row">
@@ -89,19 +97,13 @@ if (isset($_SESSION['registration_error'])) {
                                 <span class="border"></span>
                             </label>
                         </div>
-                        <?php if (!empty($registrationMessage)) { ?>
-                        <div class="registration-message"><?php echo $registrationMessage; ?>
-                            <?php } ?>
-                            <?php if (!empty($errorMessage)) { ?>
-                            <div class="error-message"><?php echo $errorMessage; ?>
-                                <?php } ?>
-                                <div class="form-row-last">
-                                    <input type="submit" name="register" class="register" value="Register">
-                                </div>
-                            </div>
+                        <div class="form-row-last">
+                            <input type="submit" name="register" class="register" value="Register">
+                        </div>
+                    </div>
                 </form>
 
-                <!----Sign in------->
+                <!----LOGIN------->
                 <form class="form-detail" action="login-config.php" method="post">
                     <div class="tabcontent" id="sign-in">
                         <div class="form-row">
@@ -121,7 +123,7 @@ if (isset($_SESSION['registration_error'])) {
                         </div>
                         <?php
                             if (isset($_SESSION['login_error'])) {
-                                echo '<div class="error-message">' . $_SESSION['login_error'] . '</div>';
+                                echo '<div class="log-error-message">' . $_SESSION['login_error'] . '</div>';
                                 unset($_SESSION['login_error']); 
                                 }
                         ?>
@@ -130,25 +132,43 @@ if (isset($_SESSION['registration_error'])) {
                         </div>
                     </div>
                 </form>
+                <?php if (!empty($registrationMessage)) { ?>
+                <div class="registration-message"><?php echo $registrationMessage; ?>
+                    <?php } ?>
+                    <div id="registration-error-container">
+                        <?php if (!empty($errorMessage)) { ?>
+                        <div class="reg-error-message"><?php echo $errorMessage; ?>
+                            <?php } ?>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    <script>
-    function openCity(evt, cityName) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-        document.getElementById(cityName).style.display = "block";
-        evt.currentTarget.className += " active";
-    }
-    document.getElementById("defaultOpen").click();
-    </script>
+
+
+            <script>
+            function openCity(evt, cityName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+
+                // Hide registration error message when switching to login tab
+                if (cityName === "sign-in") {
+                    var registrationErrorContainer = document.getElementById("registration-error-container");
+                    if (registrationErrorContainer) {
+                        registrationErrorContainer.style.display = "none";
+                    }
+                }
+            }
+            document.getElementById("defaultOpen").click();
+            </script>
 </body>
 
 </html>
