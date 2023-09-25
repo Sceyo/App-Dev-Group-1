@@ -68,7 +68,7 @@ include("insert_listing.php");
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src=".\assets\carouselIMG1.jpg" class="d-block w-100" alt="...">
+                <img src=".\assets\carouselIMG1.jpg" class="d-block w-100" alt="..." style="transform: scale(1,1.7);">
                 <div class="carousel-caption">
                     <h5>Your Dream House</h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, nulla, tempore. Deserunt
