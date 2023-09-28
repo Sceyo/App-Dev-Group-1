@@ -1,5 +1,9 @@
 <?php
 session_start();
+if (!(isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true && $_SESSION['user_role'] === 'admin')) {
+    header("Location: index.php");
+    exit();
+}
 include("database.php");
 include("insert_listing.php");
 

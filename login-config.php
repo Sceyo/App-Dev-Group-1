@@ -14,6 +14,7 @@ if (isset($_POST['login'])) {
         $row = $result->fetch_assoc();
         if (password_verify($password_login, $row['password'])) {
             $_SESSION['user_logged_in'] = true; 
+            $_SESSION['user_role'] = $row['role'];
             header("Location: index.php");
             exit(); 
         } else {

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 19, 2023 at 02:28 PM
+-- Generation Time: Sep 28, 2023 at 06:14 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -45,7 +45,9 @@ CREATE TABLE `listings` (
 --
 
 INSERT INTO `listings` (`listing_id`, `title`, `location`, `landarea`, `floorarea`, `bedrooms`, `bathrooms`, `price`, `description`, `image`) VALUES
-(1, 'Test Title', 'Test location', '123', '123', '123', '123', 123123, 'sdklfjskldf', 'uploads/test1.jpg,uploads/test2.jpeg');
+(2, 'test2', 'test2', '213123', '123123', '123123`', '13123', 1234120, 'sdfsfsfsdf', 'uploads/test7.jpg,uploads/test6.jpg'),
+(3, 'sdfs', 'sf', '123', '123', '123', '23', 321312, 'sdfsdf', 'uploads/test3.jpg,uploads/test4.jpg'),
+(5, 'a', 'a', '123', '123', '123', '123', 123123, '213', 'uploads/test3.jpg,uploads/test4.jpg,uploads/test5.jpg,uploads/test6.jpg');
 
 -- --------------------------------------------------------
 
@@ -58,16 +60,9 @@ CREATE TABLE `users` (
   `firstname` varchar(255) NOT NULL,
   `lastname` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `role` enum('user','admin') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`user_id`, `firstname`, `lastname`, `email`, `password`) VALUES
-(1, 'Jolony Tim', 'Tangpuz', 'bobtangpuz@gmail.com', '$2y$10$BUxmz/RdlFOTJeZWQRUgQu9d.xK.lacTAyG51UWv77HQwaAdBgx/i'),
-(2, 'test', 'test', 'test@gmail.com', '$2y$10$BZTXSd3UhYj9X3uFN9.Na.OR0lxLndp/2xBlxqkacCP2citNRj43m');
 
 --
 -- Indexes for dumped tables
@@ -93,13 +88,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `listings`
 --
 ALTER TABLE `listings`
-  MODIFY `listing_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `listing_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

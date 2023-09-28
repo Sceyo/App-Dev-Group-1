@@ -31,7 +31,7 @@ if (isset($_POST['register'])) {
         } else {
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);   //hash pass
 
-            $sql = "INSERT INTO users (firstname, lastname, email, password) VALUES ('$firstname', '$lastname', '$email', '$hashed_password')";
+            $sql = "INSERT INTO users (firstname, lastname, email, password, role) VALUES ('$firstname', '$lastname', '$email', '$hashed_password', 'admin')";
 
             if ($conn->query($sql) === TRUE) {
                 $_SESSION['registration_success'] = true;
