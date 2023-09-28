@@ -57,10 +57,26 @@ if ($result) {
                         <a class="nav-link" href="index.php#services">Listings</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php#contact">Contact Us</a>
+                        <?php
+                        if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) {
+                            if ($_SESSION['user_role'] === 'admin') {
+                                echo '<a class="nav-link" href="dashboard.php">Dashboard</a>';
+                        } else {
+                                echo '<a class="nav-link" href="#contact">Contact Us</a>';
+                            }
+                        } else{
+                            echo '<a class="nav-link" href="#contact">Contact Us</a>';
+                        }
+                            ?>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="signin.php">Login</a>
+                        <?php
+                        if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) {
+                            echo '<a class="nav-link" href="logout.php">Logout</a>';
+                            } else {
+                                echo '<a class="nav-link" href="signin.php">Login</a>';
+                            }
+                            ?>
                     </li>
                 </ul>
             </div>
