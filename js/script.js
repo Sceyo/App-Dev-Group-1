@@ -1,5 +1,4 @@
 function openModal(modalId) {
-    const myModal = new bootstrap.Modal(document.getElementById(modalId));
-    myModal.show();
+  const myModal = new bootstrap.Modal(document.getElementById(modalId));
+  myModal.show();
 }
-
